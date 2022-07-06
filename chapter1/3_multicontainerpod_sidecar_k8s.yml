@@ -17,7 +17,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
 
-  - name: reader
+  - name: sidecar
     image: busybox:stable
     command: ['sh','-c','while true; do cat /input/data.txt; sleep 5; done']
     volumeMounts:
