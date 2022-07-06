@@ -1,0 +1,15 @@
+mkdir my-website
+cd my-website/
+vim index.html
+
+vim Dockerfile
+
+FROM nginx:stable
+
+COPY index.html /usr/share/nginx/html/
+
+docker build -t my-website:0.0.1 .
+
+docker run --rm --name mywebsite -d -p 8080:80 my-website:0.0.1
+
+docker save -o  /home/adminuser/my-website.0.0.1.tar my-website:0.0.1
